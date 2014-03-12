@@ -1,4 +1,6 @@
-This is the code repository for the URBANGENE project, see http://urbangene.epfl.ch. For now, the code source is about a crowdsourcing web application built in partnership between HEIG-VD and EPFL. It is the first piece of software for a PPGIS platform dedicated to urban biodiversity. 
+This is the code repository for the URBANGENE project, see http://urbangene.epfl.ch. 
+
+For now, the code source is about a crowdsourcing web application built in partnership between HEIG-VD and EPFL. It is the first piece of software for a PPGIS platform dedicated to urban biodiversity. 
 
 Crowdsourcing campaigns roadmap:
 - March 21th, 2014: it is planned a first campaign using the application during spring 2014, so as to build an inventory of ponds biodiversity in the surounding region of Geneva, Switzerland.
@@ -20,3 +22,7 @@ The two following files need to be modified in order to reference the correct lo
 The credentials to connect your database need to be updated in the connection file.
 
 - /conf/Connection.php
+
+## Licence ##
+
+This is a GPL based Open Source research project.
