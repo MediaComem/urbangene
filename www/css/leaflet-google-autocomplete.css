@@ -1,0 +1,38 @@
+.leaflet-center {
+    /*width: 40%;*/
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.leaflet-control-googleautocomplete {
+    border-radius: 7px;
+    margin: 0;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+	border-radius: 4px;
+    height: auto;
+}
+.leaflet-container .leaflet-control-googleautocomplete .leaflet-control-googleautocomplete-wrapper {
+    float: left;
+}
+.leaflet-container .leaflet-control-googleautocomplete input {
+    width: 25px;
+    height: 25px;
+    padding: 0px 0px 0px 0px;
+    text-indent: 8px;
+    background: rgba(255, 255, 255, 1);			
+    border-radius: 4px;
+    background-image: url(../img/leaflet/search-icon.png);
+    background-position:  3px -22px;
+    background-repeat: no-repeat;
+    border: none;
+}
+.leaflet-container .leaflet-control-googleautocomplete .leaflet-control-googleautocomplete-closetome {
+    float: left;
+    height: 28px;
+    padding: 0;
+    text-indent: 8px;
+    background: rgba(255, 255, 255, 1);			 
+    border-radius: 4px;
+    border: none;
+}
+
