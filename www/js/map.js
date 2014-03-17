@@ -61,7 +61,7 @@ $(document).ready(function() {
     }).addTo(map);
 
     ggl = new L.Google('SATELLITE');
-    ggl2 = new L.Google('HYBRID');
+    ggl2 = new L.Google('MIXTE');
 
     //initial layer setup
     map.addLayer(baseLayer);
