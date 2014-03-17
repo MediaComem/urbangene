@@ -151,7 +151,7 @@
 		    			</div>
 		    			<div id="personalData">
 					    	<div id="distance">
-						    	<label>A quelle distance approximative de votre habitation se trouve un espace naturel (un parc public, un jardin, etc.)</label>
+						    	<label>A quelle distance approximative de votre habitation se trouve un espace naturel (un parc public, un jardin, etc.) ?</label>
 								<label class="leftAlign"><input type="radio" name="distance" value="a">Directement autour de ma maison</label>
 								<label class="leftAlign"><input type="radio" name="distance" value="b">A quelques dizaines mètres</label>
 								<label class="leftAlign"><input type="radio" name="distance" value="c">A quelques centaines de mètres</label>
@@ -215,7 +215,7 @@
 								</label>
 								<input id="contactEmail2" type="text" name="email" placeholder="E-mail">
 					    	</div>
-					    	
+
 		    			</div>
 		    			<hr class="hr2" />
 				    	<button id="accept">Enregistrer</button>
