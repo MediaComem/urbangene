@@ -131,6 +131,7 @@ textarea{
      width: 90%;
      background-color: #f3f3f3;
      height: 100%;
+     overflow: hidden;
  }
  #hideShowBar{
      position: relative;
@@ -185,7 +186,7 @@ textarea{
   background: -ms-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.85) 100%), url('../img/URBANGENE_Final.png') no-repeat 50%;
 
   background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.85) 100%), url('../img/URBANGENE_Final.png') no-repeat 50%;
-  
+
   background-size: contain;
 }
 
@@ -262,7 +263,7 @@ textarea{
 	float: right;
 	margin-right: 23px;
 	margin-bottom: 20px;
-	margin-top: 10px;
+	margin-top: 8px;
 }
 .accept{
 	margin-top: 10px;
@@ -730,10 +731,13 @@ body .ui-tooltip {
     bottom: 20px;
     top: auto;
 }
+body .ui-dialog {
+    box-shadow: 0 0 3px #333;
+}
 body .ui-widget-content {
 	border: 0px;
-	background: #363636;
-	color: #d6d6d6;
+	background: #F3F3F3;
+	color: #333;
 }
 .tooltip{
 	position: absolute;
