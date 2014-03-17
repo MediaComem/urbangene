@@ -45,6 +45,7 @@ $(document).ready(function() {
     map = L.map('map', {
         center: new L.LatLng(46.31, 6.23),
         zoom: 11,
+        minZoom: 9,
         maxZoom: 20,
         zoomControl: false
     });
