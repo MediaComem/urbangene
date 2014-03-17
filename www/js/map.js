@@ -25,6 +25,8 @@ var poiIcon = L.Icon.extend({
     }
 });
 
+var maxBounds = L.latLngBounds(L.latLng(46.63152171082673, 7.073822021484375), L.latLng(45.744526980468436, 5.592041015625));
+
 var msg_success = "votre point a bien été ajouté, merci";
 var msg_error = "veuillez remplir tous les champs";
 $(window).resize(function() {
@@ -72,6 +74,12 @@ $(document).ready(function() {
     }, {}));
 
     var zoom1
+
+    map.on('move', function() {
+        L.GoogleAutocomplete.component.setBounds(new google.maps.LatLngBounds(
+            new google.maps.LatLng(map.getBounds().getSouthWest().lat, map.getBounds().getSouthWest().lng),
+            new google.maps.LatLng(map.getBounds().getNorthEast().lat, map.getBounds().getNorthEast().lng)));
+    })
     map.on('zoomstart', function() {
         zoom1 = map.getZoom()
     });
@@ -144,10 +152,7 @@ $(document).ready(function() {
 
     // Limit zoom and extent
     map._layersMinZoom = 9;
-    map.setMaxBounds([
-        [46.63152171082673, 7.073822021484375],
-        [45.744526980468436, 5.592041015625]
-    ]);
+    map.setMaxBounds(maxBounds);
 });
 
 
