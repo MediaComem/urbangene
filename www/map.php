@@ -159,7 +159,7 @@
 								<label class="leftAlign"><input type="radio" name="distance" value="d">A plus d’un kilomètre</label>
 							</div>
 							<div id="presence">
-								<label>Combien de temps par semaine passez-vous dans un espace naturel ?</label>
+								<label>Combien de temps passez-vous dans un espace naturel ?</label>
 								<label class="leftAlign"><input type="radio" name="presence" value="a">Plusieurs heures par jour</label>
 								<label class="leftAlign"><input type="radio" name="presence" value="b">Environ une heure chaque jour</label>
 								<label class="leftAlign"><input type="radio" name="presence" value="c">Quelques heures par semaine</label>
