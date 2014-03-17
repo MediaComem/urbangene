@@ -61,4 +61,26 @@ class Crud_utilisateur {
         $insert_id = $insert_row[0];
         return $insert_id;
     }
+    
+    public function getUsernameById($id){
+	    $db = new Connection();
+        $this->conn = $db->getConnection();
+                
+        $query = "SELECT pseudo FROM utilisateur WHERE id = ".$id;
+        
+        $result = pg_query($this->conn, $query);
+        if (!$result){
+            throw new DAOException("erreur lors de la requête", 500);
+        }
+        $numRows = pg_num_rows($result);
+        if($numRows==0){
+            throw new DAOException("il n'y a pas d'utilisateur/pseudonime avec cet ID", 500);
+        }
+        while ($row = pg_fetch_array($result)) {
+	    	$username = $row[0];
+	    }
+	    
+        return $username;
+
+    }
 }

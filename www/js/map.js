@@ -656,7 +656,7 @@ function onClick(button) {
                     //remover marker from map and add it to marker cluster
                     map.removeLayer(marker)
                     //marker.addTo(markers)
-                    addfinalPoint(receivedData.point, receivedData.types)
+                    addfinalPoint(receivedData.point, receivedData.types, receivedData.username)
 
                     //lock point after saved
                     marker.dragging.disable();
@@ -750,11 +750,11 @@ function isError(boolean) {
     }
 }
 
-function addfinalPoint(point, types) {
+function addfinalPoint(point, types, username) {
     var options = {
         'closeButton': true
     };
-    var pointData = getMarkerData(types);
+    var pointData = getMarkerData(types, username);
     var markerOptions = {
         title: 'point',
         alt: 'mare',
@@ -809,7 +809,7 @@ function getPoints() {
     }, function(data) {
         if (data.length > 0) {
             $(data).each(function(index, feat) {
-                addfinalPoint(feat.pointdata, feat.type)
+                addfinalPoint(feat.pointdata, feat.type, feat.username)
             });
         }
     })
@@ -821,7 +821,11 @@ function addControl() {
 
 
 
-function getMarkerData(types) {
+function getMarkerData(types, username) {
+	var byText = "";
+	if(username != ""){
+		byText = " par le contributeur "+username;
+	}
     var icon, output
         icon = new poiIcon({
             iconUrl: 'css/img/icones/marker_saved.png',
@@ -838,34 +842,34 @@ function getMarkerData(types) {
     } else if (types.length == 1) {
         switch (types[0]) {
             case "Crapaud commun":
-                output = "<div class='popupMap'>Dans cette mare des crapauds communs ont été détectés</div>"
+                output = "<div class='popupMap'>Dans cette mare des crapauds communs ont été identifés"+byText+".</div>"
                 break;
             case "Triton alpestre":
-                output = "<div class='popupMap'>Dans cette mare des tritons alpestres ont été détectés</div>"
+                output = "<div class='popupMap'>Dans cette mare des tritons alpestres ont été identifés"+byText+".</div>"
                 break;
             case "Grenouille rousse":
-                output = "<div class='popupMap'>Dans cette mare des grenouilles rousses ont été détectés</div>"
+                output = "<div class='popupMap'>Dans cette mare des grenouilles rousses ont été identifés"+byText+".</div>"
                 break;
         }
     } else if (types.length == 2) {
         switch (types[0] + "|" + types[1]) {
             case "Crapaud commun|Triton alpestre":
             case "Triton alpestre|Crapaud commun":
-                output = "<div class='popupMap'>Dans cette mare des crapauds communs et des tritons alpestres ont été détectés</div>"
+                output = "<div class='popupMap'>Dans cette mare des crapauds communs et des tritons alpestres ont été identifés"+byText+".</div>"
                 break;
             case "Triton alpestre|Grenouille rousse":
             case "Grenouille rousse|Triton alpestre":
-                output = "<div class='popupMap'>Dans cette mare des tritons alpestres et des grenouilles rousses ont été détectés</div>"
+                output = "<div class='popupMap'>Dans cette mare des tritons alpestres et des grenouilles rousses ont été identifés"+byText+".</div>"
                 break;
             case "Grenouille rousse|Crapaud commun":
             case "Crapaud commun|Grenouille rousse":
-                output = "<div class='popupMap'>Dans cette mare des grenouilles rousses et des crapauds communs ont été détectés</div>"
+                output = "<div class='popupMap'>Dans cette mare des grenouilles rousses et des crapauds communs ont été identifés"+byText+".</div>"
                 break;
         }
     } else if (types.length == 3) {
-        output = "<div class='popupMap'>Dans cette mare des grenouilles rousses, des crapauds communs et des tritons alpestres ont été détectés</div>"
+        output = "<div class='popupMap'>Dans cette mare des grenouilles rousses, des crapauds communs et des tritons alpestres ont été identifés"+byText+".</div>"
     } else {
-        output = "<div class='popupMap'>Zoomer, puis déplacer l'icône pour affiner sa position</div>"
+        output = "<div class='popupMap'>Zoomer, puis déplacer l'icône pour affiner sa position.</div>"
     }
     var a = [];
     a.push(icon);
@@ -890,7 +894,7 @@ $(".drag").draggable({
         $("#pointData").fadeIn();
 
 
-        var data = getMarkerData("new");
+        var data = getMarkerData("new", "");
 
 
         var options = {
@@ -924,7 +928,7 @@ function insertPointLocaly(position, options) {
 
     //add the popup data
     points = map.containerPointToLatLng(position);
-    var data = getMarkerData("normal");
+    var data = getMarkerData("normal", "");
     var output = "<div class='popupMap'><span>Zoomer, puis déplacer l'icône pour affiner sa position</span></div>";
     var markerOptions = {
         'height': 100,

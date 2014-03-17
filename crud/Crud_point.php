@@ -59,7 +59,7 @@ class Crud_point{
         $db = new Connection();
         $this->conn = $db->getConnection();
                 
-        $query = "SELECT id, ST_AsGeoJSON(geom), zoom FROM point";
+        $query = "SELECT id, ST_AsGeoJSON(geom), zoom, fkey_id_utilisateur FROM point";
 
         $result = pg_query($this->conn, $query);
 
@@ -79,6 +79,7 @@ class Crud_point{
             $point->setZoom($row[2]);
             $point->setLat($data->coordinates[1]);
             $point->setLng($data->coordinates[0]);
+            $point->setIdUtilisateur($row[3]);
             array_push($points, $point);
         }
         return $points;
@@ -106,7 +107,7 @@ class Crud_point{
         $point->setZoom($row[2]);
         $point->setLat($data->coordinates[1]);
         $point->setLng($data->coordinates[0]);
-
+		
         return $point;
     }
 }

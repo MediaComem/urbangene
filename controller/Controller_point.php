@@ -154,6 +154,7 @@ class Controller_point {
         $returnValues['point'] = $this->model_point;
         $returnValues['types'] = $types;
         $returnValues['idUser'] = $idUtilisateur;
+        $returnValues['username'] = $pseudo;
         echo json_encode($returnValues);
     }
     
@@ -172,6 +173,8 @@ class Controller_point {
                 }
                 $objectArray["type"] = $typeArray;
             }
+            $username = $this->crud_utilisateur->getUsernameById($point->getIdUtilisateur());
+            $objectArray["username"] = $username;
             array_push($pointsType, $objectArray);
         }
         echo json_encode($pointsType);
