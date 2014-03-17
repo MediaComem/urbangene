@@ -763,11 +763,11 @@ function addfinalPoint(point, types, username) {
     };
     var pointData = getMarkerData(types, username);
     var markerOptions = {
-        title: 'point',
+        title: pointData[1],
         alt: 'mare',
         icon: pointData[0]
     }
-    var point = L.marker([point.lat, point.lng], markerOptions).bindPopup(pointData[1], options).addTo(markers);
+    var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>"+pointData[1]+"</div>", options).addTo(markers);
 }
 
 function setSidebarSize(size) {
@@ -845,38 +845,38 @@ function getMarkerData(types, username) {
             shadowUrl: 'css/img/icones/marker_shadow.png'
         });
     } else if (types == null || types.length <= 0) {
-        output = "<div class='popupMap'>Aucun batracien n'a été identifié dans cette mare</div>"
+        output = "Aucun batracien n'a été identifié dans cette mare"
     } else if (types.length == 1) {
         switch (types[0]) {
             case "Crapaud commun":
-                output = "<div class='popupMap'>Dans cette mare des crapauds communs ont été identifés"+byText+".</div>"
+                output = "Dans cette mare des crapauds communs ont été identifés"+byText+"."
                 break;
             case "Triton alpestre":
-                output = "<div class='popupMap'>Dans cette mare des tritons alpestres ont été identifés"+byText+".</div>"
+                output = "Dans cette mare des tritons alpestres ont été identifés"+byText+"."
                 break;
             case "Grenouille rousse":
-                output = "<div class='popupMap'>Dans cette mare des grenouilles rousses ont été identifés"+byText+".</div>"
+                output = "Dans cette mare des grenouilles rousses ont été identifés"+byText+"."
                 break;
         }
     } else if (types.length == 2) {
         switch (types[0] + "|" + types[1]) {
             case "Crapaud commun|Triton alpestre":
             case "Triton alpestre|Crapaud commun":
-                output = "<div class='popupMap'>Dans cette mare des crapauds communs et des tritons alpestres ont été identifés"+byText+".</div>"
+                output = "Dans cette mare des crapauds communs et des tritons alpestres ont été identifés"+byText+"."
                 break;
             case "Triton alpestre|Grenouille rousse":
             case "Grenouille rousse|Triton alpestre":
-                output = "<div class='popupMap'>Dans cette mare des tritons alpestres et des grenouilles rousses ont été identifés"+byText+".</div>"
+                output = "Dans cette mare des tritons alpestres et des grenouilles rousses ont été identifés"+byText+"."
                 break;
             case "Grenouille rousse|Crapaud commun":
             case "Crapaud commun|Grenouille rousse":
-                output = "<div class='popupMap'>Dans cette mare des grenouilles rousses et des crapauds communs ont été identifés"+byText+".</div>"
+                output = "Dans cette mare des grenouilles rousses et des crapauds communs ont été identifés"+byText+"."
                 break;
         }
     } else if (types.length == 3) {
-        output = "<div class='popupMap'>Dans cette mare des grenouilles rousses, des crapauds communs et des tritons alpestres ont été identifés"+byText+".</div>"
+        output = "Dans cette mare des grenouilles rousses, des crapauds communs et des tritons alpestres ont été identifés"+byText+"."
     } else {
-        output = "<div class='popupMap'>Zoomer, puis déplacer l'icône pour affiner sa position.</div>"
+        output = "Zoomer, puis déplacer l'icône pour affiner sa position."
     }
     var a = [];
     a.push(icon);
@@ -936,7 +936,7 @@ function insertPointLocaly(position, options) {
     //add the popup data
     points = map.containerPointToLatLng(position);
     var data = getMarkerData("normal", "");
-    var output = "<div class='popupMap'><span>Zoomer, puis déplacer l'icône pour affiner sa position</span></div>";
+    var output = "<span>Zoomer, puis déplacer l'icône pour affiner sa position</span></div>";
     var markerOptions = {
         'height': 100,
         icon: data[0],
