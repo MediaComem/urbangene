@@ -187,7 +187,7 @@
 				    			<label class="leftAlign" for="bf">
 					    			<input id="bf" type="checkbox" name="biodiversity" value="A la varitété des individus de chaque espèce vivante">A la variété des individus de chaque espèce vivante
 				    			</label>
-								<label class="leftAlign" for="bx">
+								<label id="bxlabel" class="leftAlign" for="">
 									<input id="bx" type="checkbox" name="biodiversity" value=""><input id="otherBio" type="text" name="q6" placeholder="Autre">
 								</label>
 					    	</div>

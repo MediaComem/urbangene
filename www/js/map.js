@@ -142,7 +142,7 @@ $(document).ready(function() {
 
     //select checkbox on textfield click, uncheck if empty on click out
     $('#otherBio').focus(function() {
-        $('#bx').prop('checked', true);
+	        $('#bx').prop('checked', true);
     }).blur(function() {
         if ($(this).val() == "") {
             $('#bx').prop('checked', false);
@@ -171,7 +171,6 @@ function getToolTip(type) {
                 text = "grenouille rousse"
                 break;
         }
-        console.log($(element).attr("alt"));
         var parent = $(element).parent('.imageType');
         //ToolTip 1
 
@@ -296,7 +295,6 @@ function hideShowOwnership() {
 function hideShowBiodiversite() {
     //display biodiversity questions if user chooses too.
     $("#questions input[name='questionsTT']").change(function() {
-        console.log($("#personalData").is(":visible"))
         if ($(this).val() == "false") {
             if ($("#personalData").is(":visible")) {
                 $('#sideContent').animate({
@@ -626,7 +624,6 @@ function onClick(button) {
                     controller: 'point',
                     action: 'add'
                 };
-                //console.log(parametres)
 
                 $.getJSON(APP_URL + DISPATCHER, parametres, function(data) {
                     var receivedData = data
