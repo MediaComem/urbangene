@@ -38,7 +38,7 @@
 	    			<div id="introduction">
 	    				<div class="contentCenter">
 	    					<div class="narrowCenter">
-	    						<h1>Projet urbangene</h1>
+	    						<h1>Projet URBANGENE</h1>
 	    						<ul class="partners">
 	    							<li class="epfl"><a href="http://www.epfl.ch" title="">Ecole polytechnique fédérale de Lausanne</a></li>
 	    							<li class="heig"><a href="http://www.heig-vd.ch/formations/bachelor/ingenierie-des-medias" title="Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud">Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud</a></li>
@@ -46,7 +46,7 @@
 		    					<div>
 			    					<div class="intro">
 					    				<p>Le projet <strong>URBANGENE</strong> est conduit par l’EPFL et le Grand Genève. Son but est d’estimer les effets de l’urbanisation sur la biodiversité dans l’agglomération genevoise.</p>
-										<p>Des informations complémentaires sur le projet peuvent être trouvées sur <a href="http://urbangene.epfl.ch">le site du projet urbangene de l'EPFL</a>.</p>
+										<p>Des informations complémentaires sur le projet peuvent être trouvées sur <a href="http://urbangene.epfl.ch">le site du projet URBANGENE de l'EPFL</a>.</p>
 			    					</div>
 			    					<div class="intro">
 										<p>Dans ce cadre, nous avons besoin de votre contribution dans le but de dresser un inventaire aussi complet que possible des mares existantes sur le territoire de l'agglomération genevoise, des deux côtés de la frontière. </p>
