@@ -446,6 +446,7 @@ function onClick(button) {
                     }
                     setTimeout(function() {
                         setSidebarSize(width);
+                        $('.leaflet-control-zoom-out').focus();
                     }, 500);
 
                     $('#hideShowArrow').delay(500).animate({
