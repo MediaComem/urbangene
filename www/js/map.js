@@ -547,7 +547,7 @@ function onClick(button) {
                 var biodiversity = new Array();
                 if ($("input[name='biodiversity']:checked").length != false) {
                     $("#biodiversity input:checked").each(function() {
-                        if ($(this).attr('id') != "bf") {
+                        if ($(this).attr('id') != "bx") {
                             biodiversity.push($(this).val());
                         } else {
                             biodiversity.push($("#otherBio").val());

@@ -25,7 +25,6 @@ class Crud_preservation {
             
         $db = new Connection();
         $this->conn = $db->getConnection();
-        
         foreach ($preservations as $preservation){
             pg_query($this->conn, "BEGIN WORK");
             $query = "INSERT INTO preservation(text, id_utilisateur)
