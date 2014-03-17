@@ -92,6 +92,7 @@
 									<input id="rd3" type="checkbox" name="imageType" value="Grenouille rousse" />
 									<img src="img/type/animal3off.png" class="imgChoice" alt="images-ronde_1" width="150" height="150" infobox="">
 								</label>
+								<span class="smallText right">Crédit photo: Andreas Meyer</span>
 				    		</div>
 				    		<div id="prop">
 				    			<label>Avez-vous identifié une autre espèce ?</label>
@@ -136,7 +137,7 @@
 					    		<hr />
 				    			<label class="pseudo">Nom:</label>
 							    <input class="pseudo" type="text" name="pseudo" placeholder="(optionnel)">
-							    <span id="smallPseudo">Signez votre contribution avec un nom ou un pseudonyme</span>
+							    <span class="smallText">Signez votre contribution avec un nom ou un pseudonyme</span>
 			    			</div>
 		    			</div>
 		    			<div id="questions">

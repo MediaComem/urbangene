@@ -313,10 +313,13 @@ textarea{
 	padding: 5px 10px 10px 10px;
 	margin-bottom: 20px;
 }
-#smallPseudo {
-font-size: 0.7em;
-display: block;
-margin-top: 10px;
+.smallText {
+	font-size: 0.7em;
+	display: block;
+	margin-top: 10px;
+}
+.right{
+	text-align: center;
 }
 #sliderQuality, #sliderLife, #sliderHealth{
 	width: 300px;
