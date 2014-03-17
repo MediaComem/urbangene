@@ -101,7 +101,7 @@
                 var placeLocation = L.latLng(place.geometry.location.lat(), place.geometry.location.lng());
                 if (!maxBounds.contains(placeLocation)) {
                     console.log('Hey! I am not contained in the map');
-                    $('<div title="Erreur"></div>').html("La localisation sélectionnée se trouve en dehors des limites de la carte").dialog({
+                    $('<div></div>').html("Ce lieu est trouvé hors de la zone d'étude. Merci d'en rechercher un autre.").dialog({
                         dialogClass: 'simple_alert'
                     });
 

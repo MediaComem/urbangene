@@ -730,10 +730,13 @@ body .ui-tooltip {
     bottom: 20px;
     top: auto;
 }
+body .ui-dialog {
+    box-shadow: 0 0 3px #333;
+}
 body .ui-widget-content {
 	border: 0px;
-	background: #363636;
-	color: #d6d6d6;
+	background: #F3F3F3;
+	color: #333;
 }
 .tooltip{
 	position: absolute;
