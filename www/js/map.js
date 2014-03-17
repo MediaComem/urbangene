@@ -674,6 +674,9 @@ function onClick(button) {
                     $('#notification').fadeIn().delay(2300).fadeOut();
                     $('.drag').delay(1000).fadeIn();
 
+					//scroll window to top
+					$("#sideContent").scrollTop( 0 )
+					
                     //the form is taken away
                     isActive = false;
                 })
