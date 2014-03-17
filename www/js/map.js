@@ -1,5 +1,3 @@
-
-
 var map;
 var baseLayer = null;
 var ggl = null;
@@ -292,19 +290,19 @@ function hideShowOwnership() {
 function hideShowBiodiversite() {
     //display biodiversity questions if user chooses too.
     $("#questions input[name='questionsTT']").change(function() {
-    	console.log($("#personalData").is(":visible"))
+        console.log($("#personalData").is(":visible"))
         if ($(this).val() == "false") {
-        	if($("#personalData").is(":visible")){
-	            $('#sideContent').animate({
-	                scrollTop: $("#sideContent").scrollTop() - 300
-	            }, 400);
-	            $("#personalData").slideUp({
-	                duration: 400,
-	                easing: 'easeInOutQuad'
-	            }).fadeTo(400, 0);
-	          }
+            if ($("#personalData").is(":visible")) {
+                $('#sideContent').animate({
+                    scrollTop: $("#sideContent").scrollTop() - 300
+                }, 400);
+                $("#personalData").slideUp({
+                    duration: 400,
+                    easing: 'easeInOutQuad'
+                }).fadeTo(400, 0);
+            }
         } else if ($(this).val() == "true") {
-        	$("#expandArrow").addClass('deployed');
+            $("#expandArrow").addClass('deployed');
             $('#sideContent').delay(200).animate({
                 scrollTop: $("#sideContent").scrollTop() + 300
             }, 400);
@@ -405,7 +403,7 @@ function removeOldLayers() {
 }
 
 function showSearch() {
-	var input = $(".leaflet-container .leaflet-control-googleautocomplete input");
+    var input = $(".leaflet-container .leaflet-control-googleautocomplete input");
     input.animate({
         width: "300px",
         height: "28px",
@@ -416,7 +414,7 @@ function showSearch() {
 }
 
 function hideSearch() {
-	var input = $(".leaflet-container .leaflet-control-googleautocomplete input");
+    var input = $(".leaflet-container .leaflet-control-googleautocomplete input");
     input.animate({
         width: "25px",
         height: "25px",
@@ -924,7 +922,7 @@ function insertPointLocaly(position, options) {
     //add the popup data
     points = map.containerPointToLatLng(position);
     var data = getMarkerData("normal");
-    var output = "<div class='popupMap'><span>Zoomer, puis déplacer l'icône pour plus de précision.</span></div>";
+    var output = "<div class='popupMap'><span>Zoomer, puis déplacer l'icône pour affiner sa position</span></div>";
     var markerOptions = {
         'height': 100,
         icon: data[0],
