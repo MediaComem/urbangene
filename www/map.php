@@ -70,11 +70,11 @@
 	    				<div id="buttons">
 					    	<button id="delete">annuler</button>
 				    	</div>
+				    	<span id="dndtext" title="Glisser l'icône sur la carte">Ajouter une mare...</span>
 				    	<span class="poi-type">
 				    		<img class="drag" type="point" src="css/img/icones/marker_add.png" title="Glisser l'icône sur la carte" alt="Glisser l'icône sur la carte" />
 				    		<img class="dragDummy" type="point" src="css/img/icones/marker_add.png" title="Glisser l'icône sur la carte" alt="Glisser l'icône sur la carte" />
 				    	</span>
-				    	<span id="dndtext" title="Glisser l'icône sur la carte">Ajouter une mare...</span>
 				    	<span id="smallText">(glisser l'icône sur la carte)</span>
 		    		</div>
 		    		<div id="dataForm">
