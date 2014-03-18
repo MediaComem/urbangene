@@ -5,6 +5,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width">
 
+	<meta property="og:title" content="URBANGENE"/>
+	<meta property="og:url" content="http://urbangene.heig-vd.ch/"/>
+  	<meta property="og:image" content="http://urbangene.heig-vd.ch/img/URBANGENE_Final.png"/>
+  	<meta property="og:site_name" content="Projet URBANGENE"/>
+  	<meta property="og:description" content="C'est le printemps, contribuez à notre inventaire !"/>
+
+
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/map.css" />
@@ -17,9 +24,9 @@
 	<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
 	<link rel="stylesheet" href="css/leaflet-google-autocomplete.css" />
 	<link rel="stylesheet" href="css/jquery.fileupload.css">
-	
+
 	<link rel="stylesheet" href="css/L.Control.Zoomslider.css" />
-	
+
 	<link rel="stylesheet" href="css/bootstrap.css">
 
     <script src="js/config.js" type="text/javascript"></script>
@@ -43,7 +50,10 @@
 	    			<div id="introduction">
 	    				<div class="contentCenter">
 	    					<div class="narrowCenter">
-	    						<h1>Projet URBANGENE</h1>
+	    						<header>
+	    							<h1>Projet URBANGENE</h1>
+	    							<p class="facebook-share"><a href="https://www.facebook.com/sharer/sharer.php?u=http://urbangene.heig-vd.ch/" target="_blank">facebook</a></p>
+	    						</header>
 	    						<ul class="partners">
 	    							<li class="epfl"><a href="http://www.epfl.ch" title="">Ecole polytechnique fédérale de Lausanne</a></li>
 	    							<li class="heig"><a href="http://www.heig-vd.ch/formations/bachelor/ingenierie-des-medias" title="Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud">Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud</a></li>
@@ -256,9 +266,9 @@
 
 		<!-- slider -->
 		<script src="js/L.Control.Zoomslider.js" ></script>
-		
+
 		<script src="js/jquery.knob.js"></script>
-		
+
 		<!-- image upload -->
 		<script src="js/jquery.ui.widget.js"></script>
 		<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
@@ -267,8 +277,8 @@
 		<script src="js/jquery.fileupload.js"></script>
 		<!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		
-		
+
+
 
 		<!-- Our main JS file -->
 		<script src="js/script.js"></script>
