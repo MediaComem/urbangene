@@ -62,14 +62,14 @@ $(document).ready(function() {
     }).addTo(map);
 
     ggl = new L.Google('SATELLITE');
-    ggl2 = new L.Google('MIXTE');
+    ggl2 = new L.Google('HYBRID');
 
     //initial layer setup
     map.addLayer(baseLayer);
     map.addControl(new L.Control.Layers({
         'Carte': baseLayer,
         'Satellite': ggl,
-        'Hybrid': ggl2
+        'Mixte': ggl2
     }, {}));
 
     var zoom1
@@ -415,7 +415,7 @@ function mapZoomDisplay(zoom1) {
         removeOldLayers()
         map.addLayer(ggl2);
         map.addControl(new L.Control.Layers({
-            'Hybrid': ggl2,
+            'Mixte': ggl2,
             'Satellite': ggl
         }, {}));
     } else if ((map.getZoom() <= 16 && zoom1 > 16)) {
@@ -423,7 +423,7 @@ function mapZoomDisplay(zoom1) {
         map.addLayer(baseLayer);
         map.addControl(new L.Control.Layers({
             'Carte': baseLayer,
-            'Hybrid': ggl2,
+            'Mixte': ggl2,
             'Satellite': ggl
         }, {}));
     }
