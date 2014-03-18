@@ -8,6 +8,7 @@ var markers = new L.MarkerClusterGroup({
     maxClusterRadius: 35,
     spiderfyDistanceMultiplier: 1.5
 });
+var aeSource;
 var marker;
 var points;
 var offset;
@@ -154,6 +155,30 @@ $(document).ready(function() {
     // Limit zoom and extent
     map._layersMinZoom = 9;
     map.setMaxBounds(maxBounds);
+    // Change this to the location of your server-side upload handler:
+    var url = '../server/php/';
+    $('#fileupload').fileupload({
+    	url: url,
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo(document.body);
+                aeSource = file.name;
+            });
+            $('#progressDone').show();
+			$('.fileinput-button').removeClass('btn-success').addClass('btn-disabled');
+			$("#fileupload").prop('disabled', true);
+			$(".btn input#fileupload").addClass('disableInput');
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
 });
 
 
@@ -481,16 +506,12 @@ function onClick(button) {
                 } else {
                     valid = false;
                 }
-                var aeNom, aeSource
+                var aeNom
                 if ($("#prop input:radio[name='prop']").is(':checked')) {
                     if ($("#prop input:radio[name='prop']:checked").val() == "true") {
                         if (!$("input[name='speciesName']").val().length == 0) {
                             aeNom = $("input[name='speciesName']").val();
-                        } else {
-                            valid = false;
-                        }
-                        if (tpl != null) {
-                            aeSource = $("input[name='image']").val();
+                            console.log("add name: "+ aeNom)
                         } else {
                             valid = false;
                         }
@@ -611,7 +632,7 @@ function onClick(button) {
                     mail: email,
                     types: imageTypes,
                     aeNom: aeNom,
-                    aeSource: globName,
+                    aeSource: aeSource,
                     distance: distance,
                     presence: presence,
                     qualite: quality,
@@ -1006,3 +1027,4 @@ function filterJSONCall(rawjson) {
 
     return json;
 }
+

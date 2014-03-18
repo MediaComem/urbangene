@@ -58,7 +58,7 @@
             searchbox.id = 'leaflet-control-googleautocomplete-qry';
             searchbox.type = 'text';
             searchbox.placeholder = "No need to fill this field";
-            console.log(searchbox);
+
             this._searchbox = searchbox;
 
             /*

@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/MarkerCluster.css" />
 	<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
 	<link rel="stylesheet" href="css/leaflet-google-autocomplete.css" />
+	<link rel="stylesheet" href="css/jquery.fileupload.css">
+	
+	<link rel="stylesheet" href="css/bootstrap.css">
 
     <script src="js/config.js" type="text/javascript"></script>
 	<script src="js/jquery.min.js" type="text/javascript"></script>
@@ -106,12 +109,18 @@
 				    		<div id="otherSpecies">
 								<label>Si vous connaissez le nom de cette espèce, merci de l’indiquer dans le champ ci-après :</label>
 					    		<input type="text" name="speciesName" placeholder="Nom de l'espèce">
-					    		<form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
-					    			<label>Si vous avez une photo de cette espèce, vous avez la possibilité de l'ajouter ici :</label>
-						    		<a>Ajouter une photo</a>
-						    		<input type="file" name="upl" placeholder="upload">
-						    		<ul></ul>
-								</form>
+					    		<label>Si vous avez une photo de cette espèce, vous avez la possibilité de l’uploader ici :</label>
+					    		<!-- The fileinput-button span is used to style the file input field as button -->
+							    <span class="btn btn-success fileinput-button">
+							        <i class="glyphicon glyphicon-plus"></i>
+							        <span>Naviguer</span>
+							        <!-- The file input field used as target for the file upload widget -->
+							        <input id="fileupload" type="file" name="files[]" >
+							    </span>
+							    <!-- The global progress bar -->
+							    <div id="progress" class="progress">
+							        <div class="progress-bar progress-bar-success"><span id="progressDone">Fichier téléchargé</div></div>
+							    </div>
 				    		</div>
 					    	<div id="ownership">
 						    	<label>La mare indiquée est :</label>
@@ -244,11 +253,17 @@
 		<script src="js/jquery.simpletip-1.3.1.min.js"></script>
 
 		<script src="js/jquery.knob.js"></script>
-
-		<!-- jQuery File Upload Dependencies -->
+		
+		<!-- image upload -->
 		<script src="js/jquery.ui.widget.js"></script>
+		<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
 		<script src="js/jquery.iframe-transport.js"></script>
+		<!-- The basic File Upload plugin -->
 		<script src="js/jquery.fileupload.js"></script>
+		<!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		
+		
 
 		<!-- Our main JS file -->
 		<script src="js/script.js"></script>

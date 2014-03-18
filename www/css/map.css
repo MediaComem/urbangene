@@ -318,6 +318,9 @@ textarea{
 	display: block;
 	margin-top: 10px;
 }
+.btn input.disableInput {
+	cursor: default;
+}
 .right{
 	text-align: center;
 }
