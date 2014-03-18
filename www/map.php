@@ -54,8 +54,8 @@
 										<p>Des informations complémentaires sur le projet peuvent être trouvées sur <a href="http://urbangene.epfl.ch">le site du projet URBANGENE de l'EPFL</a>.</p>
 			    					</div>
 			    					<div class="intro">
-										<p>Dans ce cadre, nous avons besoin de votre contribution dans le but de dresser un inventaire aussi complet que possible des mares existantes sur le territoire de l'agglomération genevoise, des deux côtés de la frontière. </p>
-										<p>Avec l’aide de cet outil cartographique, merci d'indiquer sur la carte le ou les emplacements où vous savez que se trouve une mare.</p>
+										<p>Vous pouvez contribuer à notre inventaire !</p>
+										<p>Poursuivez en indiquant sur la carte (en Suisse ou en France) les emplacements où vous avez vu une mare...</p>
 										<div id="groupeNextButton"><p>C'est parti !</p><div class="nextButton"><div id="hideArrow"></div></div></div>
 			    					</div>
 		    					</div>
