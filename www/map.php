@@ -159,7 +159,7 @@
 							</label>
 		    			</div>
 		    			<div id="personalData">
-		    				<b>La biodiversité et vous ...</b>
+		    				<div id="biodEtVous">La biodiversité et vous ...</div>
 					    	<div id="distance">
 						    	<label>A quelle distance approximative de votre habitation se trouve un espace naturel (un parc public, un jardin, etc.) ?</label>
 								<label class="leftAlign"><input type="radio" name="distance" value="a">Directement autour de ma maison</label>

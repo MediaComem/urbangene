@@ -775,6 +775,10 @@ h2{
 #personalData{
 	display: none;
 }
+#biodEtVous{
+	font-weight: bold;
+	margin: 0px 30px;
+}
 #expandArrow.deployed {
     background: url(img/icones/contract_arrow.png) no-repeat;
 
