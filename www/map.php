@@ -139,7 +139,7 @@
 								<label class="yesNo" for="contactNon">
 									<input id="contactNon" type="radio" name="contact" value="false">Non
 								</label>
-						    	<input id="contactEmail" type="text" name="email" placeholder="E-mail">
+						    	<input id="contactEmail" class="email" type="text" name="email" placeholder="E-mail">
 					    	</div>
 					    	<div id="pseudo">
 					    		<hr />
@@ -223,7 +223,7 @@
 								<label class="yesNo" for="extraNon">
 									<input id="extraNon" type="radio" name="extra" value="false">Non
 								</label>
-								<input id="contactEmail2" type="text" name="email" placeholder="E-mail">
+								<input id="contactEmail2" class"email" type="text" name="email" placeholder="E-mail">
 					    	</div>
 
 		    			</div>

@@ -149,6 +149,15 @@ $(document).ready(function() {
             $('#bx').prop('checked', false);
         }
     });
+    
+    //check email
+    $('.email').blur( function(){
+    	if(!IsEmail($('.email').val()) && $('.email').val() != ""){
+			$('.email').addClass("invalidInput")
+    	}else{
+	    	$('.email').removeClass("invalidInput")
+    	}
+    })
 
     getToolTip(".imgChoice")
 
@@ -181,6 +190,10 @@ $(document).ready(function() {
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 });
 
+function IsEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
 
 function getToolTip(type) {
     $(type).each(function(index, element) {
