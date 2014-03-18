@@ -18,6 +18,8 @@
 	<link rel="stylesheet" href="css/leaflet-google-autocomplete.css" />
 	<link rel="stylesheet" href="css/jquery.fileupload.css">
 	
+	<link rel="stylesheet" href="css/L.Control.Zoomslider.css" />
+	
 	<link rel="stylesheet" href="css/bootstrap.css">
 
     <script src="js/config.js" type="text/javascript"></script>
@@ -252,6 +254,9 @@
 		<script src="js/jquery-ui.dnd.js"></script>
 		<script src="js/jquery.simpletip-1.3.1.min.js"></script>
 
+		<!-- slider -->
+		<script src="js/L.Control.Zoomslider.js" ></script>
+		
 		<script src="js/jquery.knob.js"></script>
 		
 		<!-- image upload -->

@@ -56,9 +56,6 @@ $(document).ready(function() {
 
 
     new L.Control.GoogleAutocomplete().addTo(map);
-    new L.control.zoom({
-        position: 'topleft'
-    }).addTo(map)
     baseLayer = L.tileLayer('http://{s}.tile.cloudmade.com/b9941117432e4e63bb0e5a410de8e6eb/116155/256/{z}/{x}/{y}.png', {
         // Ajoute un copyright custom
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -76,7 +73,9 @@ $(document).ready(function() {
     }, {}));
 
     var zoom1
-
+	
+	//add zoom slider
+	map.addControl(new L.Control.Zoomslider());
     map.on('move', function() {
         L.GoogleAutocomplete.component.setBounds(new google.maps.LatLngBounds(
             new google.maps.LatLng(map.getBounds().getSouthWest().lat, map.getBounds().getSouthWest().lng),
