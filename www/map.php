@@ -80,7 +80,7 @@
 		    		<div id="dataForm">
 		    			<div id="pointData">
 				    		<div id="imageRadio">
-				    			<label>Indiquez la ou les photo(s) correspondant à une ou plusieurs espèces que vous avez vue(s) à proximité de cette mare.</label>
+				    			<label>Cliquez sur la ou les espèce(s) que vous avez vue(s) près de cette mare.</label>
 				    			<label class="imageType" for="rd1">
 									<input id="rd1" type="checkbox" name="imageType" value="Crapaud commun" />
 									<img src="img/type/animal1off.png" class="imgChoice" alt="images-ronde_2" width="150" height="150" infobox="">
