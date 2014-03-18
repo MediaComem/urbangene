@@ -499,11 +499,38 @@ input[type=checkbox] + img{
     }
 }
 
+#introduction .narrowCenter header {
+    margin: 0 auto;
+}
+#introduction .narrowCenter p.facebook-share {
+    display: inline-block;
+    position: relative;
+    top: -22px;
+    margin-left: 15px;
+}
+#introduction .narrowCenter p.facebook-share a {
+
+    display: inline-block;
+    background: url('../img/facebook.png') 50% no-repeat;
+    width: 67px;
+    height: 45px;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #introduction .narrowCenter p.facebook-share a {
+        background: url('../img/facebook@2x.png') 50% no-repeat;
+        background-size: 67px 45px
+    }
+}
 #introduction .narrowCenter h1 {
     background: url('../img/urbangenelogo.png') 50% no-repeat;
     width: 388px;
     height: 57px;
-    margin: 0 auto;
+    display: inline-block;
+
 
     text-indent: 100%;
     white-space: nowrap;
