@@ -27,15 +27,17 @@ class Crud_point{
 
         pg_query($this->conn, "BEGIN WORK");
         if($point->getIdAutreEspece()){
-        $query = "INSERT INTO point(geom, zoom, fkey_id_utilisateur, fkey_id_autreespece)
+        $query = "INSERT INTO point(geom, zoom, date, fkey_id_utilisateur, fkey_id_autreespece)
             VALUES (ST_GeometryFromText('POINT(".$point->getLng()." ".$point->getLat().")', 4326 ), "
-                .$point->getZoom().", "
+                .$point->getZoom().", '"
+                .$point->getDate()."', "
                 .$point->getIdUtilisateur().", "
                 .$point->getIdAutreEspece().") RETURNING id ";
         }  else {
-            $query = "INSERT INTO point(geom, zoom, fkey_id_utilisateur)
+            $query = "INSERT INTO point(geom, zoom, date, fkey_id_utilisateur)
             VALUES (ST_GeometryFromText('POINT(".$point->getLng()." ".$point->getLat().")', 4326 ), "
-                .$point->getZoom().", "
+                .$point->getZoom().", '"
+                .$point->getDate()."', "
                 .$point->getIdUtilisateur().") RETURNING id ";
         }
         $result = pg_query($this->conn, $query);
@@ -45,6 +47,7 @@ class Crud_point{
                     .$point->getLat()."', '"
                     .$point->getLng()."', '"
                     .$point->getZoom()."', '"
+                    .$point->getDate()."', '"
                     .$point->getIdUtilisateur()."', '"
                     .$point->getIdAutreEspece()."', ....", 500);
         } else {
@@ -59,7 +62,7 @@ class Crud_point{
         $db = new Connection();
         $this->conn = $db->getConnection();
                 
-        $query = "SELECT id, ST_AsGeoJSON(geom), zoom, fkey_id_utilisateur FROM point";
+        $query = "SELECT id, ST_AsGeoJSON(geom), zoom, fkey_id_utilisateur, date FROM point";
 
         $result = pg_query($this->conn, $query);
 
@@ -80,6 +83,7 @@ class Crud_point{
             $point->setLat($data->coordinates[1]);
             $point->setLng($data->coordinates[0]);
             $point->setIdUtilisateur($row[3]);
+            $point->setDate($row[4]);
             array_push($points, $point);
         }
         return $points;
@@ -89,7 +93,7 @@ class Crud_point{
         $db = new Connection();
         $this->conn = $db->getConnection();
                 
-        $query = "SELECT id, ST_AsGeoJSON(geom), zoom FROM point WHERE id = ".$id;
+        $query = "SELECT id, ST_AsGeoJSON(geom), zoom, date FROM point WHERE id = ".$id;
         
         $result = pg_query($this->conn, $query);
 
@@ -107,6 +111,7 @@ class Crud_point{
         $point->setZoom($row[2]);
         $point->setLat($data->coordinates[1]);
         $point->setLng($data->coordinates[0]);
+        $point->setDate($row[3]);
 		
         return $point;
     }

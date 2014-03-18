@@ -9,6 +9,7 @@ CREATE TABLE point (
 	id serial NOT NULL,
 	geom geometry,
 	zoom INTEGER,
+	date DATE,
 	fkey_id_utilisateur INTEGER,
 	fkey_id_autreespece INTEGER,
 	PRIMARY KEY(id)
