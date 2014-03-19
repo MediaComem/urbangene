@@ -318,6 +318,12 @@ textarea{
 	display: block;
 	margin-top: 10px;
 }
+.msText{
+	font-size: 0.8em;
+	display: block;
+	margin-top: 10px;
+	right: 0px;
+}
 .btn input.disableInput {
 	cursor: default;
 }

@@ -133,7 +133,8 @@ class Controller_point {
             }
             $idPreservations = $this->crud_preservation->insert($this->model_preservations);
         }
-        
+        $date = date('Y-m-d');
+        $this->model_point->setDate($date);
         $this->model_point->setLat($lat);
         $this->model_point->setLng($lng);
         $this->model_point->setZoom($zoom);

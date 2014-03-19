@@ -19,9 +19,18 @@ class Modele_point implements JsonSerializable{
     protected $lng;
     protected $lat;
     protected $zoom;
+    protected $date;
     protected $idAutreEspece;
     protected $idUtilisateur;
-         
+     
+    public function getDate() {
+	    return $this->date;
+    }
+    
+    public function setDate($date) {
+	    $this->date = $date;
+    }
+        
     public function getZoom() {
         return $this->zoom;
     }
@@ -73,7 +82,8 @@ class Modele_point implements JsonSerializable{
             'id' => $this->id,
             'lng' => $this->lng,
             'lat' => $this->lat,
-            'zoom' => $this->zoom
+            'zoom' => $this->zoom,
+            'date' => $this->date
         ];
     }
 
