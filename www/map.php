@@ -124,11 +124,11 @@
 				    		<div id="otherSpecies">
 								<label>Si vous connaissez le nom de cette espèce, merci de l’indiquer dans le champ ci-après :</label>
 					    		<input type="text" name="speciesName" placeholder="Nom de l'espèce">
-					    		<label>Si vous avez une photo de cette espèce, vous avez la possibilité de l’uploader ici :</label>
+					    		<label>Si vous avez une photo de cette espèce, vous avez la possibilité de la télécharger ci-dessous :</label>
 					    		<!-- The fileinput-button span is used to style the file input field as button -->
 							    <span class="btn btn-success fileinput-button">
 							        <i class="glyphicon glyphicon-plus"></i>
-							        <span>Naviguer</span>
+							        <span>Ajouter une photo</span>
 							        <!-- The file input field used as target for the file upload widget -->
 							        <input id="fileupload" type="file" name="files[]" >
 							    </span>
