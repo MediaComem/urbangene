@@ -28,6 +28,10 @@
 	<link rel="stylesheet" href="css/L.Control.Zoomslider.css" />
 
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<script type="text/javascript">
+	 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+	 if (width < 700) alert("L'application n'est pas encore fonctionnelle sur les petits écrans...");
+	</script>
 
     <script src="js/config.js" type="text/javascript"></script>
 	<script src="js/jquery.min.js" type="text/javascript"></script>
