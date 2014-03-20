@@ -175,10 +175,10 @@ $(document).ready(function() {
 
     //check email
     $('.email').focusout(function(){
-        if (!IsEmail($('.email').val()) && $('.email').val() != "") {
-            $('.email').addClass("invalidInput")
+        if (!IsEmail($(this).val()) && $(this).val() != "") {
+            $(this).addClass("invalidInput")
         } else {
-            $('.email').removeClass("invalidInput")
+            $(this).removeClass("invalidInput")
         }
     })
 
