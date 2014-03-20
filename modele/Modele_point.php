@@ -78,12 +78,14 @@ class Modele_point implements JsonSerializable{
     }
 
     public function jsonSerialize() {
+    	    $date = new DateTime($this->date);
+            $date = $date->format('d/m/Y');
         return [
             'id' => $this->id,
             'lng' => $this->lng,
             'lat' => $this->lat,
             'zoom' => $this->zoom,
-            'date' => $this->date
+            'date' => $date
         ];
     }
 

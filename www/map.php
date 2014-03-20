@@ -92,12 +92,12 @@
 	    				<div id="buttons">
 					    	<button id="delete">annuler</button>
 				    	</div>
-				    	<span id="dndtext" title="Glisser l'icône sur la carte">Ajouter une mare...</span>
+				    	<span id="dndtext" title="Glisser l'icône sur la carte">Ajouter une mare</span>
 				    	<span class="poi-type">
 				    		<img class="drag" type="point" src="css/img/icones/marker_add.png" title="Glisser l'icône sur la carte" alt="Glisser l'icône sur la carte" />
 				    		<img class="dragDummy" type="point" src="css/img/icones/marker_add.png" title="Glisser l'icône sur la carte" alt="Glisser l'icône sur la carte" />
 				    	</span>
-				    	<span id="smallText">(glisser l'icône sur la carte)</span>
+				    	<span id="smallText">Glisser l'icône sur la carte</span>
 		    		</div>
 		    		<div id="dataForm">
 		    			<div id="pointData">
@@ -117,7 +117,6 @@
 									<input id="rd3" type="checkbox" name="imageType" value="Grenouille rousse" />
 									<img src="img/type/animal3off.png" class="imgChoice" alt="images-ronde_1" width="150" height="150" infobox="">
 								</label>
-								<span class="smallText right">Crédit photo: Andreas Meyer</span>
 				    		</div>
 				    		<div id="prop">
 				    			<label>Avez-vous identifié une autre espèce ?</label>
@@ -131,11 +130,11 @@
 				    		<div id="otherSpecies">
 								<label>Si vous connaissez le nom de cette espèce, merci de l’indiquer dans le champ ci-après :</label>
 					    		<input type="text" name="speciesName" placeholder="Nom de l'espèce">
-					    		<label>Si vous avez une photo de cette espèce, vous avez la possibilité de l’uploader ici :</label>
+					    		<label>Si vous avez une photo de cette espèce, vous avez la possibilité de la télécharger ci-dessous :</label>
 					    		<!-- The fileinput-button span is used to style the file input field as button -->
 							    <span class="btn btn-success fileinput-button">
 							        <i class="glyphicon glyphicon-plus"></i>
-							        <span>Naviguer</span>
+							        <span>Ajouter une photo</span>
 							        <!-- The file input field used as target for the file upload widget -->
 							        <input id="fileupload" type="file" name="files[]" >
 							    </span>
@@ -245,7 +244,7 @@
 								<label class="yesNo" for="extraNon">
 									<input id="extraNon" type="radio" name="extra" value="false">Non
 								</label>
-								<input id="contactEmail2" class"email" type="text" name="email" placeholder="E-mail">
+								<input id="contactEmail2" class="email" type="text" name="email" placeholder="E-mail">
 					    	</div>
 
 		    			</div>
