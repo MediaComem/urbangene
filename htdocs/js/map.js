@@ -27,6 +27,8 @@ var poiIcon = L.Icon.extend({
     }
 });
 
+var borderLayer;
+
 var maxBounds = L.latLngBounds(L.latLng(46.63152171082673, 7.073822021484375), L.latLng(45.744526980468436, 5.592041015625));
 
 var msg_success = "votre point a bien été ajouté, merci";
@@ -54,6 +56,22 @@ $(document).ready(function() {
 
 
 
+    $.getJSON('/js/grand-geneve-4326.geojson', function(data) {
+
+        var myStyle = {
+            "color": "#444444",
+            "weight": 5,
+            "opacity": 0.5
+        };
+
+        borderLayer = L.geoJson(data, {
+            style: myStyle
+        });
+
+        borderLayer.addTo(map);
+    });
+
+
 
 
     new L.Control.GoogleAutocomplete().addTo(map);
@@ -74,10 +92,15 @@ $(document).ready(function() {
     }, {}));
 
     var zoom1
-	
-	//add zoom slider
-	map.addControl(new L.Control.Zoomslider());
+
+    //add zoom slider
+    map.addControl(new L.Control.Zoomslider());
     map.on('move', function() {
+        if (map.getZoom() >= 17) {
+            map.removeLayer(borderLayer);
+        } else {
+            map.addLayer(borderLayer);
+        }
         L.GoogleAutocomplete.component.setBounds(new google.maps.LatLngBounds(
             new google.maps.LatLng(map.getBounds().getSouthWest().lat, map.getBounds().getSouthWest().lng),
             new google.maps.LatLng(map.getBounds().getNorthEast().lat, map.getBounds().getNorthEast().lng)));
@@ -143,20 +166,20 @@ $(document).ready(function() {
 
     //select checkbox on textfield click, uncheck if empty on click out
     $('#otherBio').focus(function() {
-	        $('#bx').prop('checked', true);
+        $('#bx').prop('checked', true);
     }).blur(function() {
         if ($(this).val() == "") {
             $('#bx').prop('checked', false);
         }
     });
-    
+
     //check email
-    $('.email').blur( function(){
-    	if(!IsEmail($('.email').val()) && $('.email').val() != ""){
-			$('.email').addClass("invalidInput")
-    	}else{
-	    	$('.email').removeClass("invalidInput")
-    	}
+    $('.email').blur(function() {
+        if (!IsEmail($('.email').val()) && $('.email').val() != "") {
+            $('.email').addClass("invalidInput")
+        } else {
+            $('.email').removeClass("invalidInput")
+        }
     })
 
     getToolTip(".imgChoice")
@@ -167,18 +190,24 @@ $(document).ready(function() {
     // Change this to the location of your server-side upload handler:
     var url = APP_URL+'/server/php/';
     $('#fileupload').fileupload({
-    	url: url,
+        url: url,
         dataType: 'json',
+<<<<<<< HEAD:htdocs/js/map.js
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
+=======
+        done: function(e, data) {
+            $.each(data.result.files, function(index, file) {
+                $('<p/>').text(file.name).appendTo(document.body);
+>>>>>>> master:www/js/map.js
                 aeSource = file.name;
             });
             $('#progressDone').show();
-			$('.fileinput-button').removeClass('btn-success').addClass('btn-disabled');
-			$("#fileupload").prop('disabled', true);
-			$(".btn input#fileupload").addClass('disableInput');
+            $('.fileinput-button').removeClass('btn-success').addClass('btn-disabled');
+            $("#fileupload").prop('disabled', true);
+            $(".btn input#fileupload").addClass('disableInput');
         },
-        progressall: function (e, data) {
+        progressall: function(e, data) {
             var progress = parseInt(data.loaded / data.total * 100, 10);
             $('#progress .progress-bar').css(
                 'width',
@@ -192,8 +221,8 @@ $(document).ready(function() {
 });
 
 function IsEmail(email) {
-  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  return regex.test(email);
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
 }
 
 function getToolTip(type) {
@@ -525,6 +554,10 @@ function onClick(button) {
                     if ($("#prop input:radio[name='prop']:checked").val() == "true") {
                         if (!$("input[name='speciesName']").val().length == 0) {
                             aeNom = $("input[name='speciesName']").val();
+<<<<<<< HEAD:htdocs/js/map.js
+=======
+                            console.log("add name: " + aeNom)
+>>>>>>> master:www/js/map.js
                         } else {
                             valid = false;
                         }
@@ -712,9 +745,9 @@ function onClick(button) {
                     $('#notification').fadeIn().delay(2300).fadeOut();
                     $('.drag').delay(1000).fadeIn();
 
-					//scroll window to top
-					$("#sideContent").scrollTop( 0 )
-					
+                    //scroll window to top
+                    $("#sideContent").scrollTop(0)
+
                     //the form is taken away
                     isActive = false;
                 })
@@ -793,18 +826,22 @@ function addfinalPoint(point, types, username) {
         'closeButton': true
     };
     var pointData = getMarkerData(types);
-    if(username == ""){
-	    username = "Anonyme";
+    if (username == "") {
+        username = "Anonyme";
     }
-    var byText = "Posté par "+username+" le " + point.date;
+    var byText = "Posté par " + username + " le " + point.date;
     var markerOptions = {
         title: pointData[1],
         alt: 'mare',
         icon: pointData[0]
     }
+<<<<<<< HEAD:htdocs/js/map.js
     allMarkers.push(point);
     var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>"+pointData[1]+"</div><span class='msText'>"+byText+"</span>", options).addTo(markers);
 	    point.on('mouseover', point.openPopup.bind(point));
+=======
+    var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>" + pointData[1] + "</div><span class='msText'>" + byText + "</span>", options).addTo(markers);
+>>>>>>> master:www/js/map.js
 }
 
 function setSidebarSize(size) {
@@ -866,7 +903,7 @@ function addControl() {
 
 
 function getMarkerData(types) {
-	var byText = "";
+    var byText = "";
     var icon, output
         icon = new poiIcon({
             iconUrl: 'css/img/icones/marker_saved.png',
@@ -1043,4 +1080,3 @@ function filterJSONCall(rawjson) {
 
     return json;
 }
-

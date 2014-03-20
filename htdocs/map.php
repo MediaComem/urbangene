@@ -56,7 +56,7 @@
 	    					<div class="narrowCenter">
 	    						<header>
 	    							<h1>Projet URBANGENE</h1>
-	    							<p class="facebook-share"><a href="https://www.facebook.com/sharer/sharer.php?u=http://urbangene.heig-vd.ch/" target="_blank">facebook</a></p>
+	    							<p class="facebook-share"><a href="//www.facebook.com/urbangene" target="_blank">facebook</a></p>
 	    						</header>
 	    						<ul class="partners">
 	    							<li class="epfl"><a href="http://www.epfl.ch" title="">Ecole polytechnique fédérale de Lausanne</a></li>
@@ -66,10 +66,14 @@
 			    					<div class="intro">
 					    				<p>Le projet <strong>URBANGENE</strong> est conduit par l’EPFL et le Grand Genève. Son but est d’estimer les effets de l’urbanisation sur la biodiversité dans l’agglomération genevoise.</p>
 										<p>Des informations complémentaires sur le projet peuvent être trouvées sur <a href="http://urbangene.epfl.ch">le site du projet URBANGENE de l'EPFL</a>.</p>
+										<div class="facebook-buttons">
+	    									<div class="fb-like" data-href="http://urbangene.heig-vd.ch" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+	    								</div>
 			    					</div>
 			    					<div class="intro">
 										<p>Vous pouvez contribuer à notre inventaire !</p>
 										<p>Poursuivez en indiquant sur la carte (en Suisse ou en France) les emplacements où vous avez vu une mare...</p>
+
 										<div id="groupeNextButton"><p>C'est parti !</p><div class="nextButton"><div id="hideArrow"></div></div></div>
 			    					</div>
 		    					</div>
@@ -77,6 +81,8 @@
 						</div>
 	    			</div>
 	    			<div id="logoBottom"><a href="http://www.grand-geneve.org/"><img src="img/logo/gg.png" alt="Grand genève"></a></div>
+
+
     			</div>
 	    		<div id="addPoint">
 	    			<div id="markerSection">
@@ -250,6 +256,15 @@
     	</div>
 		<div id="map">
 		</div>
+
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=752633244755467";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
