@@ -174,7 +174,7 @@ $(document).ready(function() {
     });
 
     //check email
-    $('.email').blur(function() {
+    $('.email').focusout(function(){
         if (!IsEmail($('.email').val()) && $('.email').val() != "") {
             $('.email').addClass("invalidInput")
         } else {
