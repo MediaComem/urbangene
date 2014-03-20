@@ -8,6 +8,7 @@ var markers = new L.MarkerClusterGroup({
     maxClusterRadius: 35,
     spiderfyDistanceMultiplier: 1.5
 });
+var allMarkers = new Array();
 var aeSource;
 var marker;
 var points;
@@ -186,6 +187,8 @@ $(document).ready(function() {
         }
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+   
 });
 
 function IsEmail(email) {
@@ -799,7 +802,9 @@ function addfinalPoint(point, types, username) {
         alt: 'mare',
         icon: pointData[0]
     }
+    allMarkers.push(point);
     var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>"+pointData[1]+"</div><span class='msText'>"+byText+"</span>", options).addTo(markers);
+	    point.on('mouseover', point.openPopup.bind(point));
 }
 
 function setSidebarSize(size) {
