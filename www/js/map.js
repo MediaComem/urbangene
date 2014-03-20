@@ -26,6 +26,8 @@ var poiIcon = L.Icon.extend({
     }
 });
 
+var borderLayer;
+
 var maxBounds = L.latLngBounds(L.latLng(46.63152171082673, 7.073822021484375), L.latLng(45.744526980468436, 5.592041015625));
 
 var msg_success = "votre point a bien été ajouté, merci";
@@ -51,17 +53,21 @@ $(document).ready(function() {
         zoomControl: false
     });
 
+
+
     $.getJSON('/js/grand-geneve-4326.geojson', function(data) {
 
         var myStyle = {
-            "color": "#555555",
+            "color": "#444444",
             "weight": 5,
-            "opacity": 0.9
+            "opacity": 0.5
         };
 
-        L.geoJson(data, {
+        borderLayer = L.geoJson(data, {
             style: myStyle
-        }).addTo(map);
+        });
+
+        borderLayer.addTo(map);
     });
 
 
@@ -89,6 +95,11 @@ $(document).ready(function() {
     //add zoom slider
     map.addControl(new L.Control.Zoomslider());
     map.on('move', function() {
+        if (map.getZoom() >= 17) {
+            map.removeLayer(borderLayer);
+        } else {
+            map.addLayer(borderLayer);
+        }
         L.GoogleAutocomplete.component.setBounds(new google.maps.LatLngBounds(
             new google.maps.LatLng(map.getBounds().getSouthWest().lat, map.getBounds().getSouthWest().lng),
             new google.maps.LatLng(map.getBounds().getNorthEast().lat, map.getBounds().getNorthEast().lng)));
