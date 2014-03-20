@@ -164,7 +164,7 @@ $(document).ready(function() {
     map._layersMinZoom = 9;
     map.setMaxBounds(maxBounds);
     // Change this to the location of your server-side upload handler:
-    var url = '../server/php/';
+    var url = APP_URL+'/server/php/';
     $('#fileupload').fileupload({
     	url: url,
         dataType: 'json',
