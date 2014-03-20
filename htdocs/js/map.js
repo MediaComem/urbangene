@@ -827,6 +827,7 @@ function addfinalPoint(point, types, username) {
     }
     var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>"+pointData[1]+"</div><span class='msText'>"+byText+"</span>", options).addTo(markers);
 	    point.on('mouseover', point.openPopup.bind(point));
+	    point.on('mouseout', point.closePopup.bind(point));
 }
 
 function setSidebarSize(size) {
