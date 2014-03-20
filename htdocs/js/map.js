@@ -548,10 +548,6 @@ function onClick(button) {
                     if ($("#prop input:radio[name='prop']:checked").val() == "true") {
                         if (!$("input[name='speciesName']").val().length == 0) {
                             aeNom = $("input[name='speciesName']").val();
-<<<<<<< HEAD:htdocs/js/map.js
-=======
-                            console.log("add name: " + aeNom)
->>>>>>> master:www/js/map.js
                         } else {
                             valid = false;
                         }
@@ -829,13 +825,8 @@ function addfinalPoint(point, types, username) {
         alt: 'mare',
         icon: pointData[0]
     }
-<<<<<<< HEAD:htdocs/js/map.js
-    allMarkers.push(point);
     var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>"+pointData[1]+"</div><span class='msText'>"+byText+"</span>", options).addTo(markers);
 	    point.on('mouseover', point.openPopup.bind(point));
-=======
-    var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>" + pointData[1] + "</div><span class='msText'>" + byText + "</span>", options).addTo(markers);
->>>>>>> master:www/js/map.js
 }
 
 function setSidebarSize(size) {
