@@ -51,6 +51,18 @@ $(document).ready(function() {
         zoomControl: false
     });
 
+    $.getJSON('/js/grand-geneve-4326.geojson', function(data) {
+
+        var myStyle = {
+            "color": "#555555",
+            "weight": 5,
+            "opacity": 0.9
+        };
+
+        L.geoJson(data, {
+            style: myStyle
+        }).addTo(map);
+    });
 
 
 
@@ -73,9 +85,9 @@ $(document).ready(function() {
     }, {}));
 
     var zoom1
-	
-	//add zoom slider
-	map.addControl(new L.Control.Zoomslider());
+
+    //add zoom slider
+    map.addControl(new L.Control.Zoomslider());
     map.on('move', function() {
         L.GoogleAutocomplete.component.setBounds(new google.maps.LatLngBounds(
             new google.maps.LatLng(map.getBounds().getSouthWest().lat, map.getBounds().getSouthWest().lng),
@@ -142,20 +154,20 @@ $(document).ready(function() {
 
     //select checkbox on textfield click, uncheck if empty on click out
     $('#otherBio').focus(function() {
-	        $('#bx').prop('checked', true);
+        $('#bx').prop('checked', true);
     }).blur(function() {
         if ($(this).val() == "") {
             $('#bx').prop('checked', false);
         }
     });
-    
+
     //check email
-    $('.email').blur( function(){
-    	if(!IsEmail($('.email').val()) && $('.email').val() != ""){
-			$('.email').addClass("invalidInput")
-    	}else{
-	    	$('.email').removeClass("invalidInput")
-    	}
+    $('.email').blur(function() {
+        if (!IsEmail($('.email').val()) && $('.email').val() != "") {
+            $('.email').addClass("invalidInput")
+        } else {
+            $('.email').removeClass("invalidInput")
+        }
     })
 
     getToolTip(".imgChoice")
@@ -166,19 +178,19 @@ $(document).ready(function() {
     // Change this to the location of your server-side upload handler:
     var url = '../server/php/';
     $('#fileupload').fileupload({
-    	url: url,
+        url: url,
         dataType: 'json',
-        done: function (e, data) {
-            $.each(data.result.files, function (index, file) {
+        done: function(e, data) {
+            $.each(data.result.files, function(index, file) {
                 $('<p/>').text(file.name).appendTo(document.body);
                 aeSource = file.name;
             });
             $('#progressDone').show();
-			$('.fileinput-button').removeClass('btn-success').addClass('btn-disabled');
-			$("#fileupload").prop('disabled', true);
-			$(".btn input#fileupload").addClass('disableInput');
+            $('.fileinput-button').removeClass('btn-success').addClass('btn-disabled');
+            $("#fileupload").prop('disabled', true);
+            $(".btn input#fileupload").addClass('disableInput');
         },
-        progressall: function (e, data) {
+        progressall: function(e, data) {
             var progress = parseInt(data.loaded / data.total * 100, 10);
             $('#progress .progress-bar').css(
                 'width',
@@ -190,8 +202,8 @@ $(document).ready(function() {
 });
 
 function IsEmail(email) {
-  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  return regex.test(email);
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
 }
 
 function getToolTip(type) {
@@ -523,7 +535,7 @@ function onClick(button) {
                     if ($("#prop input:radio[name='prop']:checked").val() == "true") {
                         if (!$("input[name='speciesName']").val().length == 0) {
                             aeNom = $("input[name='speciesName']").val();
-                            console.log("add name: "+ aeNom)
+                            console.log("add name: " + aeNom)
                         } else {
                             valid = false;
                         }
@@ -711,9 +723,9 @@ function onClick(button) {
                     $('#notification').fadeIn().delay(2300).fadeOut();
                     $('.drag').delay(1000).fadeIn();
 
-					//scroll window to top
-					$("#sideContent").scrollTop( 0 )
-					
+                    //scroll window to top
+                    $("#sideContent").scrollTop(0)
+
                     //the form is taken away
                     isActive = false;
                 })
@@ -792,16 +804,16 @@ function addfinalPoint(point, types, username) {
         'closeButton': true
     };
     var pointData = getMarkerData(types);
-    if(username == ""){
-	    username = "Anonyme";
+    if (username == "") {
+        username = "Anonyme";
     }
-    var byText = "Posté par "+username+" le " + point.date;
+    var byText = "Posté par " + username + " le " + point.date;
     var markerOptions = {
         title: pointData[1],
         alt: 'mare',
         icon: pointData[0]
     }
-    var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>"+pointData[1]+"</div><span class='msText'>"+byText+"</span>", options).addTo(markers);
+    var point = L.marker([point.lat, point.lng], markerOptions).bindPopup("<div class='popupMap'>" + pointData[1] + "</div><span class='msText'>" + byText + "</span>", options).addTo(markers);
 }
 
 function setSidebarSize(size) {
@@ -863,7 +875,7 @@ function addControl() {
 
 
 function getMarkerData(types) {
-	var byText = "";
+    var byText = "";
     var icon, output
         icon = new poiIcon({
             iconUrl: 'css/img/icones/marker_saved.png',
@@ -1040,4 +1052,3 @@ function filterJSONCall(rawjson) {
 
     return json;
 }
-
