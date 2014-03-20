@@ -152,7 +152,7 @@ class Controller_point {
         }
         $this->crud_type->insert($this->model_types);
         $returnValues = array();
-        $returnValues['point'] = $this->model_point;
+        $returnValues['point'] = $this->model_point->getJsonData();
         $returnValues['types'] = $types;
         $returnValues['idUser'] = $idUtilisateur;
         $returnValues['username'] = $pseudo;
@@ -166,7 +166,7 @@ class Controller_point {
         foreach($points as $point){
             $typeNoms = $this->crud_type->getTypeByPointId($point->getId());
             $objectArray = array();
-            $objectArray["pointdata"] = $point;
+            $objectArray["pointdata"] = $point->getJsonData();
             if($typeNoms > 0){
                 $typeArray = array();
                 foreach($typeNoms as $typeNom){

@@ -170,7 +170,6 @@ $(document).ready(function() {
         dataType: 'json',
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
-                $('<p/>').text(file.name).appendTo(document.body);
                 aeSource = file.name;
             });
             $('#progressDone').show();
@@ -523,7 +522,6 @@ function onClick(button) {
                     if ($("#prop input:radio[name='prop']:checked").val() == "true") {
                         if (!$("input[name='speciesName']").val().length == 0) {
                             aeNom = $("input[name='speciesName']").val();
-                            console.log("add name: "+ aeNom)
                         } else {
                             valid = false;
                         }

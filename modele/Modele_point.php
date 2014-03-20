@@ -12,7 +12,7 @@
  */
 
 
-class Modele_point implements JsonSerializable{
+class Modele_point{
     
     
     protected $id;
@@ -77,16 +77,16 @@ class Modele_point implements JsonSerializable{
         $this->idUtilisateur = $idUtilisateur;
     }
 
-    public function jsonSerialize() {
-    	    $date = new DateTime($this->date);
-            $date = $date->format('d/m/Y');
-        return [
+    public function getJsonData() {
+    	$date = new DateTime($this->date);
+        $date = $date->format('d/m/Y');
+        return array(
             'id' => $this->id,
             'lng' => $this->lng,
             'lat' => $this->lat,
             'zoom' => $this->zoom,
             'date' => $date
-        ];
+        );
     }
 
 }

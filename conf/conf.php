@@ -1,6 +1,6 @@
 <?php
     // URL
-    define('APP_URL', 'http://localhost:8888/URBANGENE/www/');
+    define('APP_URL', 'http://193.134.221.120/urbangene/URBANGENE_V9/www/');
     define('DISPATCHER', 'dispatcher.php');
 
     define('CONF_DIR', 'conf/');
