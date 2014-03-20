@@ -192,14 +192,8 @@ $(document).ready(function() {
     $('#fileupload').fileupload({
         url: url,
         dataType: 'json',
-<<<<<<< HEAD:htdocs/js/map.js
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
-=======
-        done: function(e, data) {
-            $.each(data.result.files, function(index, file) {
-                $('<p/>').text(file.name).appendTo(document.body);
->>>>>>> master:www/js/map.js
                 aeSource = file.name;
             });
             $('#progressDone').show();
