@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 
     new L.Control.GoogleAutocomplete().addTo(map);
-    baseLayer = L.tileLayer('http://{s}.tile.cloudmade.com/b9941117432e4e63bb0e5a410de8e6eb/116155/256/{z}/{x}/{y}.png', {
+    baseLayer = L.tileLayer('http://urbangene.heig-vd.ch/tilecache/{z}/{x}/{y}.png', {
         // Ajoute un copyright custom
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
