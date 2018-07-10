@@ -1,6 +1,6 @@
 <?php
     // URL
-    define('APP_URL', 'http://localhost:8888/URBANGENE/www/');
+    define('APP_URL', 'http://urbangene.heig-vd.ch/');
     define('DISPATCHER', 'dispatcher.php');
 
     define('CONF_DIR', 'conf/');

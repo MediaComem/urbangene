@@ -1,4 +1,5 @@
-# OS X
-.DS_Store
+/htdocs/*_log.txt
+/htdocs/tilecache
 
+# OS X
 .DS_Store
