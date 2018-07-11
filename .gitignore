@@ -1,7 +1,9 @@
 /htdocs/*_log.txt
 /htdocs/tilecache
 /htdocs/server/php/files/*
-!/htdocs/server/php/files/.keep
+!/htdocs/server/php/files/thumbnail
+/htdocs/server/php/files/thumbnail/*
+!/htdocs/server/php/files/thumbnail/.keep
 
 # OS X
 .DS_Store
