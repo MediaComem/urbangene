@@ -335,6 +335,7 @@ class UploadHandler
     function get_config_bytes($val) {
         $val = trim($val);
         $last = strtolower($val[strlen($val)-1]);
+        $val = substr($val, 0, -1);
         switch($last) {
             case 'g':
                 $val *= 1024;
