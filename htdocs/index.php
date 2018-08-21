@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width">
 
 	<meta property="og:title" content="URBANGENE"/>
-	<meta property="og:url" content="http://urbangene.heig-vd.ch/"/>
-  	<meta property="og:image" content="http://urbangene.heig-vd.ch/img/URBANGENE_Final.png"/>
+	<meta property="og:url" content="https://urbangene.heig-vd.ch/"/>
+  	<meta property="og:image" content="https://urbangene.heig-vd.ch/img/URBANGENE_Final.png"/>
   	<meta property="og:site_name" content="Projet URBANGENE"/>
   	<meta property="og:description" content="C'est le printemps, contribuez à notre inventaire !"/>
 
@@ -17,8 +17,8 @@
 	<link rel="stylesheet" href="css/map.css" />
 	<link rel="stylesheet" href="css/leaflet.search.css" />
 	<link rel="stylesheet" href="css/leaflet.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-	<link media="all" type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<link media="all" type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700">
 
     <link rel="stylesheet" href="css/MarkerCluster.css" />
 	<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
@@ -43,7 +43,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="ico/apple-touch-icon-114x114.png"> -->
 
 	<!--[if lt IE 9]>
-	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
     </head>
     <body>
@@ -67,7 +67,7 @@
 					    				<p>Le projet <strong>URBANGENE</strong> est conduit par l’EPFL et le Grand Genève. Son but est d’estimer les effets de l’urbanisation sur la biodiversité dans l’agglomération genevoise.</p>
 										<p>Des informations complémentaires sur le projet peuvent être trouvées sur <a href="http://urbangene.epfl.ch">le site du projet URBANGENE de l'EPFL</a>.</p>
 										<div class="facebook-buttons">
-	    									<div class="fb-like" data-href="http://urbangene.heig-vd.ch" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+	    									<div class="fb-like" data-href="https://urbangene.heig-vd.ch" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 	    								</div>
 			    					</div>
 			    					<div class="intro">
@@ -274,7 +274,7 @@
 		  ga('send', 'pageview');
 		</script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-		<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.1/leaflet.js"></script>
 		<script src="js/leaflet.google.js"></script>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/MarkerCluster.Default.ie.css" /><![endif]-->
 		<script src="js/leaflet.markercluster-src.js"></script>
